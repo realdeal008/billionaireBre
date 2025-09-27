@@ -1,0 +1,13 @@
+.backgroundAnimation {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+
+  // Luxury glow effect (gold / silver / dark red)
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6))   // gold glow
+          drop-shadow(0 0 40px rgba(192, 192, 192, 0.5))  // silver glow
+          drop-shadow(0 0 60px rgba(139, 0, 0, 0.4));     // dark red depth
+}
