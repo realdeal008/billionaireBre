@@ -18,19 +18,32 @@ interface Stylist {
 
 const services: { category: string; items: Service[] }[] = [
   {
-    category: "Signature Styling",
+    category: "Checklist",
     items: [
-      { name: "Red Carpet Glam", price: 250 },
-      { name: "Celebrity Updo", price: 350 },
-      { name: "Executive Styling", price: 450 },
+      { name: "Deep Conditioning only", price: 10 },
+      { name: "Loc Repair", price: 20 },
+      { name: "Basic Styling Only", price: 30 },
+      { name: "Detox", price: 40 },
+      { name: "Color End Only", price: 40 },
+      { name: "Two Strand Twist Style Only", price: 50 },
+      { name: "Color Full Hand", price: 60 },
+      { name: "Shampoo Deep Condition set", price: 60 },
+      { name: "Ponytail", price: 65 },
+      { name: "Quick Weave", price: 70 },
+      { name: "Basic Re-twist", price: 75 },
+      { name: "Re-twist plus Basic Style", price: 85 },
+      { name: "Wig Install", price: 85 },
+      { name: "Stitch Braid 6-8", price: 85 },
+      { name: "Re-twist two or three Strand Twist", price: 95  },
     ],
   },
   {
     category: "Luxury Treatments",
     items: [
-      { name: "Gold Infused Hair Treatment", price: 180 },
-      { name: "Diamond Gloss", price: 220 },
-      { name: "Caviar Repair Therapy", price: 300 },
+      { name: "Starter", price: 100 },
+      { name: "Sew in & Closure", price: 110 },
+      { name: "Insta Locs", price: 300 },
+      { name: "Locs Extension", price: 500 },
     ],
   },
 ];
@@ -51,14 +64,12 @@ const stylists: Stylist[] = [
 ];
 
 const timeSlots = [
-  "9:00 AM",
-  "10:30 AM",
+  "10:00 AM",
+  "11:30 AM",
   "12:00 PM",
   "1:30 PM",
-  "3:00 PM",
-  "4:30 PM",
-  "6:00 PM",
-  "7:30 PM",
+  "3:30 PM",
+  "5:00 PM",
 ];
 
 const vipOptions = [
