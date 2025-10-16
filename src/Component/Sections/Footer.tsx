@@ -46,26 +46,29 @@ export default function Footer() {
           {/* Contact Info */}
           <section className={styles.contactSection} aria-label="Contact Information">
             <h3 id="footer-heading" className={styles.footerTitle}>
-              <FaCrown className={styles.footerCrown} aria-hidden="true" /> Connect with Billionaire Bre
+              <FaCrown className={styles.footerCrown} aria-hidden="true" /> connect with Bre
             </h3>
             <address className={styles.contactInfo}>
+
               <p className={styles.contactItem}>
                 <FaMapMarkerAlt className={styles.footerCrown} aria-hidden="true" />
-                <span>1 Luxury Avenue, Beverly Hills, CA 90210</span>
+                <span>2233 E 38th st, Indianapolis, IN 46218
+
+                </span>
               </p>
               <p className={styles.contactItem}>
                 <FaPhone className={styles.footerCrown} aria-hidden="true" />
-                <a href="tel:+18885553548" aria-label="Call us at (888) 555-ELITE">
-                  (888) 555-ELITE
+                <a href="tel:+13178286763" aria-label="Call us at (888) 555-BILLIONAIREBRE">
+                  (888) 555-BILLIONAIREBRE
                 </a>
               </p>
               <p className={styles.contactItem}>
                 <FaEnvelope className={styles.footerCrown} aria-hidden="true" />
                 <a
-                  href="mailto:bookings@elitelocks.com"
-                  aria-label="Email bookings@elitelocks.com"
+                  href="mailto:Bre.harrington@icloud.com"
+                  aria-label="Email Bre.harrington@icloud.com"
                 >
-                  bookings@elitelocks.com
+                  Bre.harrington@icloud.com
                 </a>
               </p>
             </address>
@@ -95,7 +98,7 @@ export default function Footer() {
             className={styles.newsletterSection}
             aria-label="Join the Billionaire Bre Circle Newsletter"
           >
-            <h3 className={styles.footerTitle}>Join the Elite Circle</h3>
+            <h3 className={styles.footerTitle}>Join the Billionare Bre Circle</h3>
             <p className={styles.newsletterDesc}>
               Get VIP updates, exclusive offers, and early access to celebrity
               events. Privacy guaranteed.
@@ -131,7 +134,7 @@ export default function Footer() {
                 <FaInstagram className={styles.footerCrown} />
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@billionaire.bre888?_t=ZS-90cmoA5fJIR&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
