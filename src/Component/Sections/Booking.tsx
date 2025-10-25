@@ -85,6 +85,11 @@ export default function Booking() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedVip, setSelectedVip] = useState<string[]>([]);
   const [dateMin, setDateMin] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [date, setDate] = useState<string>("");
+  const [specialRequests, setSpecialRequests] = useState<string>("");
 
   useEffect(() => {
     const today = new Date();
@@ -100,12 +105,54 @@ export default function Booking() {
     );
   };
 
-  const handleBooking = () => {
-    if (!selectedService || !selectedStylist || !selectedTime) {
-      alert("Please complete all selections before booking.");
+  const handleBooking = async () => {
+    if (!selectedService || !selectedStylist || !selectedTime || !name || !email || !phone || !date) {
+      alert("Please complete all selections and form fields before booking.");
       return;
     }
-    alert("Your appointment has been successfully booked! 🎉");
+
+    const vipPrices = vipOptions.reduce((total, vip) => {
+      if (selectedVip.includes(vip.label)) {
+        return total + vip.price;
+      }
+      return total;
+    }, 0);
+
+    const bookingData = {
+      name,
+      email,
+      phone,
+      date,
+      time: selectedTime,
+      service: selectedService.name,
+      servicePrice: selectedService.price,
+      stylist: selectedStylist.name,
+      stylistSpecialty: selectedStylist.specialty,
+      vipOptions: selectedVip,
+      vipPrices,
+      totalPrice: selectedService.price + vipPrices,
+      specialRequests,
+    };
+
+    try {
+      const response = await fetch('/api/book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Booking failed');
+      }
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (error) {
+      console.error('Error booking appointment:', error);
+      alert('Failed to book appointment. Please try again.');
+    }
   };
 
   return (
@@ -176,17 +223,17 @@ export default function Booking() {
 
           <div className="formGroup">
             <label htmlFor="name">Your Name</label>
-            <input id="name" className="formControl" type="text" />
+            <input id="name" className="formControl" type="text" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
 
           <div className="formGroup">
             <label htmlFor="email">Email Address</label>
-            <input id="email" className="formControl" type="email" />
+            <input id="email" className="formControl" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
 
           <div className="formGroup">
             <label htmlFor="phone">Phone Number</label>
-            <input id="phone" className="formControl" type="tel" />
+            <input id="phone" className="formControl" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </div>
 
           <div className="formGroup">
@@ -196,6 +243,8 @@ export default function Booking() {
               className="formControl"
               type="date"
               min={dateMin}
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
             />
           </div>
 
@@ -243,6 +292,8 @@ export default function Booking() {
               id="special-requests"
               className="formControl"
               rows={3}
+              value={specialRequests}
+              onChange={(e) => setSpecialRequests(e.target.value)}
             ></textarea>
           </div>
 
