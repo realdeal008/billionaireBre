@@ -130,7 +130,7 @@ function FloatingParticles({ count = 80 }) {
   );
 }
 
-export default function GalleryBackground() {
+export default function FooterBackground() {
   return (
     <div className="fixed inset-0 -z-10">
       <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
