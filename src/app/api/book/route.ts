@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
     // Forward to the Rust backend
     const backendUrl = process.env.NODE_ENV === 'production'
-      ? 'https://booking-backend-47go8ddjg-realdeal008s-projects.vercel.app/book'  // Replace with actual Vercel URL after deployment
+      ? 'https://booking-backend-realdeal008s-projects.vercel.app/book'  // Updated with actual Vercel URL
       : 'http://localhost:8000/book';  // For local development
 
     const backendResponse = await fetch(backendUrl, {
@@ -20,7 +20,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (!backendResponse.ok) {
-      throw new Error('Backend booking failed');
+      const errorData = await backendResponse.json().catch(() => ({ error: 'Backend booking failed' }));
+      return NextResponse.json(errorData, { status: backendResponse.status });
     }
 
     const result = await backendResponse.json();
