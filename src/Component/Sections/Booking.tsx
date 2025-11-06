@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Lottie from "lottie-react";
 import { UserCheck, Wine, Car, Clock } from "lucide-react";
-import morphShapeAnimation from "../morphShapeAnimation.json";
-
 interface Service {
   name: string;
   price: number;
@@ -161,14 +158,7 @@ export default function Booking() {
       <div className="hero-overlay"></div>
 
       {/* Morphing Luxury Background as overlay */}
-      <div className="booking-overlay">
-        <Lottie
-          animationData={morphShapeAnimation}
-          loop
-          autoplay
-          style={{ width: "100%", height: "100%" }}
-        />
-      </div>
+
 
       {/* Booking Content */}
       <div className="bookingSection">

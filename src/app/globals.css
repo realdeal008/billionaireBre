@@ -22,9 +22,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: linear-gradient(270deg, #8B0000, #d4af37, #c0c0c0, #8B0000);
-  background-size: 400% 400%;
-  animation: gradient-flow 15s ease infinite;
 }
 
 
@@ -40,7 +37,7 @@ body {
 }
 
 .shimmer {
-  background: linear-gradient(to right, transparent, #ffd700, transparent);
+  background: linear-gradient(to right, transparent, #6A0DAD, #0F1C4D, #D4AF7F, transparent);
   animation: shimmer 3s infinite linear;
 }
 
@@ -138,9 +135,9 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 1rem;
-  animation: gradient-flow 15s ease infinite;
+  padding: 5rem 1rem 0 1rem;
   color: white;
+  position: relative;
 }
 
 
@@ -185,11 +182,11 @@ body {
   line-height: 1.1;
   background: linear-gradient(
     90deg,
-    #8b0000,
-    #d4af37,
-    #c0c0c0,
-    #d4af37,
-    #8b0000
+    #6A0DAD,
+    #D4AF7F,
+    #0F1C4D,
+    #D4AF7F,
+    #6A0DAD
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -226,18 +223,18 @@ body {
 .hero-button {
   margin-top: 2rem;
   padding: 0.875rem 2.5rem;
-  background: linear-gradient(90deg, #d4af37, #c0c0c0, #8b0000);
-  color: #1a1a1a;
+  background: linear-gradient(90deg, #6A0DAD, #0F1C4D, #D4AF7F);
+  color: #ffffff;
   font-weight: 600;
   border-radius: 9999px;
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 8px 20px rgba(106, 13, 173, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .hero-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px #d4af37;
+  box-shadow: 0 0 20px #6A0DAD;
 }
 
 /* Image */
@@ -275,6 +272,7 @@ body {
 
 
 .gallery-section {
+  position: relative;
   height: 100vh;
   padding: 4rem 2rem;
   max-width: 100%;
@@ -820,7 +818,7 @@ body {
 
 /* Button */
 .btnBook {
-   background: linear-gradient(90deg, #d4af37, #c0c0c0, #8b0000);
+   background: #6A0DAD;
   color: #1a1a1a;
   border: none;
   padding: 1.2rem 2rem;
@@ -853,6 +851,5 @@ body {
     border-radius: 8px;
   }
 }
-
 
 

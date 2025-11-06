@@ -8,8 +8,8 @@ export async function POST(request: NextRequest) {
 
     // Forward to the Rust backend
     const backendUrl = process.env.NODE_ENV === 'production'
-      ? 'https://booking-backend-realdeal008s-projects.vercel.app/book'  // Updated with actual Vercel URL
-      : 'http://localhost:8000/book';  // For local development
+      ? 'https://your-lambda-api-gateway-url.amazonaws.com/book'  // Replace with actual AWS Lambda API Gateway URL
+      : 'http://127.0.0.1:9000/2015-03-31/functions/function/invocations';  // For local development with cargo-lambda
 
     const backendResponse = await fetch(backendUrl, {
       method: 'POST',

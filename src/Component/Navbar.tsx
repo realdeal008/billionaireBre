@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 overflow-hidden ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 force-visible ${
         scrolled ? "bg-black/90 shadow-xl h-16" : "h-20"
       }`}
     >
@@ -28,7 +28,7 @@ export default function Navbar() {
       <div
         className="absolute inset-0 -z-10 transition-all duration-700"
         style={{
-          background: `linear-gradient(90deg, #8B0000, #f7bf08ff, #c0c0c0)`,
+          background: `linear-gradient(90deg, #6A0DAD, #0F1C4D, #D4AF7F)`,
           backgroundPosition: `${scrollY / 5}% center`,
           backgroundSize: "200% 200%",
         }}

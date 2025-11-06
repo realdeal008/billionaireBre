@@ -167,7 +167,7 @@
 }
 
 .newsletterBtn {
-  background: linear-gradient(90deg, #d4af37, #c0c0c0, #8b0000);
+   background: #6A0DAD;
   color: #0a0a0a;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -185,8 +185,7 @@
   svg {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(90deg, #d4af37, #c0c0c0, #8b0000);
-  }
+ background: #6A0DAD;  }
 
   &:hover {
     transform: translateY(-2px);
@@ -207,7 +206,7 @@
   a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background: linear-gradient(90deg, #d4af37, #c0c0c0, #8b0000);
+     background: #6A0DAD;
     font-size: 1.8rem;
     transition: all 0.3s ease;
     position: relative;
@@ -225,7 +224,7 @@
       transform: scale(1.2) rotate(5deg);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background: linear-gradient(90deg, #f5e3a1, #d4af37);
+      background: #6A0DAD;
     }
   }
 }

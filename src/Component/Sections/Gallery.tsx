@@ -2,9 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Lottie from "lottie-react";
 import Image from "next/image";
-import morphShapeAnimations from "../morphShapeAnimation.json";
 
 const works = [
   {
@@ -55,16 +53,6 @@ const Gallery: React.FC = () => {
  
     <div className="gallery-container">
       
-      {/* Morphing Luxury Background as overlay */}
-        <div className="gallery-overlay">
-        <Lottie
-          animationData={morphShapeAnimations}
-          loop
-          autoplay
-          style={{ width: "100%", height: "100%" }}
-        />
-      </div>
-
       {/* Section Title */}
       <motion.h2
         className="gallery-title"
