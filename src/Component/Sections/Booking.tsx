@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { UserCheck, Wine, Car, Clock } from "lucide-react";
+import toast from "react-hot-toast";
 interface Service {
   name: string;
   price: number;
@@ -104,7 +105,7 @@ export default function Booking() {
 
   const handleBooking = async () => {
     if (!selectedService || !selectedStylist || !selectedTime || !name || !email || !phone || !date) {
-      alert("Please complete all selections and form fields before booking.");
+      toast.error("Please complete all selections and form fields before booking.");
       return;
     }
 
@@ -145,10 +146,10 @@ export default function Booking() {
       }
 
       const result = await response.json();
-      alert(result.message);
+      toast.success(result.message);
     } catch (error) {
       console.error('Error booking appointment:', error);
-      alert('Failed to book appointment. Please try again.');
+      toast.error('Failed to book appointment. Please try again.');
     }
   };
 
